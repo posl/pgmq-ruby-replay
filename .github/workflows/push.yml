@@ -1,9 +1,7 @@
 name: Push Gem
 
 on:
-  push:
-    tags:
-      - v*
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -11,7 +9,7 @@ permissions:
 jobs:
   push:
     if: github.repository_owner == 'mensfeld'
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     environment: deployment
 
     permissions:
@@ -33,3 +31,4 @@ jobs:
           bundle install --jobs 4 --retry 3
 
       - uses: rubygems/release-gem@6317d8d1f7e28c24d28f6eff169ea854948bd9f7 # v1.2.0
+ß
