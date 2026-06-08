@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   push:
-    if: github.repository_owner == 'mensfeld'
+    if: github.repository_owner == 'posl'
     runs-on: self-hosted
     environment: deployment
 
